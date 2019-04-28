@@ -1,4 +1,5 @@
 cmake_minimum_required (VERSION 2.6)
+message("hiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiii")
 project (Tutorial)
 ENABLE_TESTING()
 include(CTest)
@@ -32,20 +33,25 @@ include_directories ("${PROJECT_BINARY_DIR}")
 if (USE_MYMATH)
   include_directories ("${PROJECT_SOURCE_DIR}/MathFunctions")
   add_subdirectory (MathFunctions)
-  set (EXTRA_LIBS ${EXTRA_LIBS} MathFunctions)
+  
+  message("${EXTRA_LIBS}")
+  set (EXTRA_LIBS ${EXTRA_LIBS} MathFunction)
+  message("${EXTRA_LIBS}")
+  message("ahammmmm")
 endif (USE_MYMATH)
  
 # add the executable
 add_executable (Tutorial tutorial.cxx)
-target_link_libraries (Tutorial  ${EXTRA_LIBS})
- 
+#target_link_libraries (Tutorial  ${EXTRA_LIBS})
+target_link_libraries (Tutorial MathFunctions)
+
 # add the install targets
 install (TARGETS Tutorial DESTINATION bin)
 install (FILES "${PROJECT_BINARY_DIR}/TutorialConfig.h"        
          DESTINATION include)
  
 # does the application run
-add_test (TutorialRuns Tutorial 25)
+#[[add_test (TutorialRuns Tutorial 25)
  
 # does the usage message work?
 add_test (TutorialUsage Tutorial)
@@ -80,5 +86,5 @@ set (CPACK_PACKAGE_VERSION_MAJOR "${Tutorial_VERSION_MAJOR}")
 set (CPACK_PACKAGE_VERSION_MINOR "${Tutorial_VERSION_MINOR}")
 include (CPack)
 
-# enable dashboard scripting by including CTest on the first lines of this file.
-
+# enable dashboard scripting by including CTest on the first lines of this fil
+]]

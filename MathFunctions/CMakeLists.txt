@@ -13,7 +13,7 @@ add_custom_command (
 include_directories( ${CMAKE_CURRENT_BINARY_DIR} )
  
 # add the main library
-add_library(MathFunctions mysqrt.cxx ${CMAKE_CURRENT_BINARY_DIR}/Table.h  )
+add_library(MathFunctions mysqrt.cxx ${CMAKE_CURRENT_BINARY_DIR}/Table.h)
 
 install (TARGETS MathFunctions DESTINATION lib)
 install (FILES MathFunctions.h DESTINATION include)
