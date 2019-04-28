@@ -51,7 +51,7 @@ install (FILES "${PROJECT_BINARY_DIR}/TutorialConfig.h"
          DESTINATION include)
  
 # does the application run
-#[[add_test (TutorialRuns Tutorial 25)
+add_test (TutorialRuns Tutorial 25)
  
 # does the usage message work?
 add_test (TutorialUsage Tutorial)
@@ -87,4 +87,3 @@ set (CPACK_PACKAGE_VERSION_MINOR "${Tutorial_VERSION_MINOR}")
 include (CPack)
 
 # enable dashboard scripting by including CTest on the first lines of this fil
-]]

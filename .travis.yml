@@ -5,4 +5,5 @@ language: c
 script:
  - cmake .
  - cmake --build . -- -j2
+ - ctest
 
