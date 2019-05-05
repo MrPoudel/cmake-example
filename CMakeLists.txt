@@ -1,5 +1,5 @@
 cmake_minimum_required (VERSION 2.6)
-message("hiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiii")
+
 project (Tutorial)
 ENABLE_TESTING()
 include(CTest)
