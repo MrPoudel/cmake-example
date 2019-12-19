@@ -3,8 +3,8 @@ sudo: false
 language: c
 
 addons:
-  sonarcube:
-    - organization: " " #Here goes the organization name
+  sonarcloud:
+    - organization: Dovantech Github
     - token:
        secure: #Token
 
@@ -13,5 +13,10 @@ script:
  - cmake .
  - cmake --build . -- -j2
  - ctest
+ 
+Cache:
+  directories:
+  $HOME/.sonar/cache
+  $HOME/.gradle
  
 
