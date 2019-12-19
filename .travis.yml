@@ -2,8 +2,16 @@ dist: trusty
 sudo: false
 language: c
 
+addons:
+  sonarcube:
+    - organization: " " #Here goes the organization name
+    - token:
+       secure: #Token
+
 script:
+ - sonnar-scanner
  - cmake .
  - cmake --build . -- -j2
  - ctest
+ 
 
