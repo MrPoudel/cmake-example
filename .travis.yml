@@ -9,7 +9,7 @@ addons:
        secure: #Token
 
 script:
- - sonnar-scanner
+ - sonar-scanner
  - cmake .
  - cmake --build . -- -j2
  - ctest
