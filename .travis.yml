@@ -2,14 +2,14 @@ dist: trusty
 sudo: false
 language: c
 
-addons:
-  sonarcloud:
-    - organization: Dovantech Github
-    - token:
-       secure: dafe9422fd40d91e2cf44d7465d9b9fec4db6e9e
+#addons:
+ # sonarcloud:
+  #  - organization: Dovantech Github
+   # - token:
+    #   secure: dafe9422fd40d91e2cf44d7465d9b9fec4db6e9e
 
 script:
- - sonarqube
+ #- sonarqube
  - cmake .
  - cmake --build . -- -j2
  - ctest
