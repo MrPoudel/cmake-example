@@ -1,0 +1,13 @@
+# Required metadata
+sonar.projectKey=c-sonar-runner-simple
+sonar.projectName=Travis and Sonar example
+sonar.projectVersion=1.0
+
+#paths
+sonar.sources=.
+
+#language
+sonar.language=c
+
+Encoding files
+sonar.sourceEncoding=UTF-8
