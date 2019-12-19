@@ -58,8 +58,7 @@ add_test (TutorialUsage Tutorial)
 set_tests_properties (TutorialUsage
   PROPERTIES 
   PASS_REGULAR_EXPRESSION "Usage:.*number"
-  )
- 
+  ) 
  
 #define a macro to simplify adding tests
 macro (do_test arg result)
