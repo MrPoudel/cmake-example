@@ -9,7 +9,7 @@ addons:
        secure: dafe9422fd40d91e2cf44d7465d9b9fec4db6e9e #Token
 
 script:
- - sonar-scanner
+ - sonarqube
  - cmake .
  - cmake --build . -- -j2
  - ctest
