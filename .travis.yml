@@ -8,6 +8,9 @@ addons:
      - token:
        secure: 57ddfe081ffe0318ad2f1fcaaef894d5ab525d1e
        
+env:
+  - SONAR=true
+       
 script:
  - sonar-scanner
  - cmake .
