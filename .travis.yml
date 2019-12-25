@@ -9,7 +9,7 @@ language: c
     #   secure: dafe9422fd40d91e2cf44d7465d9b9fec4db6e9e
 
 script:
- #- sonarqube
+ - sonar-scanner
  - cmake .
  - cmake --build . -- -j2
  - ctest
