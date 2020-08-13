@@ -1,18 +1,29 @@
 dist: trusty
 sudo: required
 language: c
+  
+cache:
+  directories:
+  - '$HOME/.sonar/cache'
 
 addons:
   sonarcloud:
     organization: "mrpoudel"
     token:
-       secure: 57ddfe081ffe0318ad2f1fcaaef894d5ab525d1e
-       
+       secure: "jGPJrZKZvVf4qmJhAG76OOqFqB7kg9XJLDUEM5ovKIW+08KjKF1YuW94fxo6ZiLrjvLVUO7NxyRDrIro36FqCkMm5nP0krVNvSxIqgFjEYMkujc6du1SAyBYY2o2Zri/bxcOCwjtHsfXEkmXTbOL7ibC4cRC0NNSNkLsGlKaO7aW5xnDBnfW3KskzZz6jqA/UEBzCRUipcWkhrFRD7WhTzS5KJTZ5PUSZrc0pZIr7qzAE4Pb3ef38CztAPJj7b4VMJEXHuN3SnA7jodJH8muboaD72oswDIXTQvUF4SBLiaobN4K3s8JgAqJkAPePmeS2/KdWY9HikwRP3X7O1GLOa7lfA1bABh82EQe3q3oPoFv9McxVQ4CUUa0+AoPazBlfCNfLJXWP4vsozitXOavp3GMgglcZO5OLL+Y8TEBY6qiW2daRighCy2eXMjekAnbm52lafOoPY2WkhzbKpZCLUdgzKELq7q1n9wY6hAtvaKPaxewa9MLB5agVHvRwofrZSMVNhTg7G88KUF0aPyb2qPa/ysri5JydkD5U1asjRCp1lxs1D41JKR6vdywKJDg/0m7RvNMV+KI/R54oWtQSvwiJQ6GXKvyBvBhRO/1c4RG3bce9F23ZJM+kdrQpxGEwEwZDWW09pTEh93ED/pARdy6Xvm8ZNWUyGXnl2b1EiM="
 env:
   - SONAR=true
+
+# disable git fetch depth limit to 0, otherwise you are git cloning twice.
+git:
+  depth: false  
+  
+before_install:
+  - sudo apt-get update -qq # make the output less noisy
        
 script:
- - sonar-scanner
- - cmake .
- - cmake --build . -- -j2
+ - build-wrapper-linux-x86-64 --out-dir build_wrapper_output_directory cmake .
+ #- cmake --build . -- -j2
+ - make clean all 
  - ctest
+ - sonar-scanner  -X
