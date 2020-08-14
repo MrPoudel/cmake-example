@@ -26,4 +26,4 @@ script:
  #- cmake --build . -- -j2
  - make clean all 
  - ctest
- - sonar-scanner  -X -Dsonar.projectKey=MrPoudel_cmake-example
+ - sonar-scanner  -X -Dsonar.projectKey=MrPoudel_cmake-example -Dsonar.login=ee5834afd5a8d022dc0d6db0c7ea87b47ce285e3
