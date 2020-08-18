@@ -22,8 +22,7 @@ before_install:
   - sudo apt-get update -qq # make the output less noisy
        
 script:
- - build-wrapper-linux-x86-64 --out-dir build_wrapper_output_directory cmake .
- #- cmake --build . -- -j2
- - make clean all 
+ - cmake .
+ - build-wrapper-linux-x86-64 --out-dir build_wrapper_output_directory make clean all
  - ctest
  - sonar-scanner  -X -Dsonar.projectKey=MrPoudel_cmake-example -Dsonar.login=ee5834afd5a8d022dc0d6db0c7ea87b47ce285e3
